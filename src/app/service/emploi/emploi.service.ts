@@ -23,14 +23,6 @@ export class EmploiService {
     );
   }
 
-  getPersons(): Observable<any> {
-    const headers = { 'content-type': 'application/json'};
-    const url = `${this.backendHost}:${this.backendPort}/personne/emploi`;
-
-  return this.http.get(url,{'headers':headers});
-
-  }
-
   getPersonneEmploi(personneId: number, dateDebut: string, dateFin: string): Observable<any[]> {
     const data = {
         personneId: personneId,
@@ -42,5 +34,13 @@ export class EmploiService {
 
     return this.http.post<any[]>(url, data);
 }
+
+  getPersonnesSansEmploi(dateDebut: string, dateFin: string): Observable<any[]> {
+    const url = `${this.backendHost}:${this.backendPort}/personnesSansEmploi`;
+    const data = { dateDebut, dateFin };
+
+    return this.http.post<any[]>(url, data);
+}
+
 
 }
