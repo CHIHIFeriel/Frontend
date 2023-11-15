@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Personne } from 'src/app/model/pesonne/personne.model';
 import { PersonneService } from 'src/app/service/personne/personne.service';
 
@@ -14,7 +15,7 @@ export class CreatePersonneComponent {
   personne : any;
   errorMessage : string = ''
 
-  constructor(private formBuilder: FormBuilder, private service: PersonneService) {
+  constructor(private formBuilder: FormBuilder, private service: PersonneService, private router: Router) {
     this.personneForm = this.formBuilder.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
@@ -27,7 +28,7 @@ export class CreatePersonneComponent {
       const personne: Personne = this.personneForm.value;
       this.service.createPersonne(personne).subscribe({
         next: (response) => {
-          this.errorMessage = '';
+          this.router.navigate(['/']);
         },
         error: (error) => {
 

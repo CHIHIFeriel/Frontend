@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -5,6 +6,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class PersonneEmploiService {
+
+  constructor() { }
 
   private selectedPersonneSource = new BehaviorSubject<any | null>(null);
   selectedPersonne$ = this.selectedPersonneSource.asObservable();

@@ -1,0 +1,59 @@
+/* Ajoutez ces styles dans votre fichier CSS global ou dans le fichier de style spécifique à ce composant */
+
+.your-form-class {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
+  gap: 10px; /* Espacement entre les colonnes */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%; /* Utilisez 100% de la largeur de la colonne */
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styles supplémentaires pour la liste des emplois et le message "Aucun emploi trouvé" */
+h2, p {
+  margin-top: 20px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+p {
+  color: #777;
+}

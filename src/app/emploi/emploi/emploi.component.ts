@@ -32,7 +32,7 @@ export class EmploiComponent {
 
     this.emploiForm = this.formBuilder.group({
       nomEntreprise: ['', Validators.required],
-      post: ['', Validators.required],
+      poste: ['', Validators.required],
       dateDebut: ['', Validators.required],
       dateFin: [''],
     });
@@ -44,17 +44,29 @@ export class EmploiComponent {
 
   ajoutEmploi(): void {
     if (this.selectedPersonneId) {
-      this.emploiService.ajouterEmploi(this.selectedPersonneId, this.emploi).subscribe({
+      const nomEntreprise = this.emploiForm.get('nomEntreprise')?.value;
+      const poste = this.emploiForm.get('poste')?.value;
+      const dateDebut = this.emploiForm.get('dateDebut')?.value;
+      let dateFin = this.emploiForm.get('dateFin')?.value;
+
+      const empl: Emploi = {
+        nomEntreprise: nomEntreprise,
+        poste: poste,
+        dateDebut: dateDebut,
+        dateFin: dateFin
+      };
+
+      this.emploiService.ajouterEmploi(this.selectedPersonneId, empl).subscribe({
         next: (response) => {
-          this.router.navigate(['/vuePersonnes']);
+          this.router.navigate(['/']);
         },
         error: (error) => {
           if (error instanceof HttpErrorResponse) {
             this.errorMessage = error.error.message;
-
-        }
+          }
         }
       });
     }
   }
+
 }

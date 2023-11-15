@@ -1,4 +1,4 @@
-<!-- create-personne.component.html -->
+
 
 <div class="table-container">
   <table class="personne-table">
@@ -8,10 +8,11 @@
         <th>Prénom</th>
         <th>Âge</th>
         <th>Emplois</th>
+        <th>act</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let personne of personnes" (click)="selectPersonne(personne)">
+      <tr *ngFor="let personne of personnes">
         <td>{{ personne.nom }}</td>
         <td>{{ personne.prenom }}</td>
         <td>{{ personne.age }}</td>
@@ -22,6 +23,8 @@
             </li>
           </ul>
         </td>
+        <td><button (click)="selectPersonne(personne)">Ajouter Emploi</button>
+        <button (click)="selectPersonneEmploi(personne)">List des emploi</button></td>
       </tr>
     </tbody>
   </table>

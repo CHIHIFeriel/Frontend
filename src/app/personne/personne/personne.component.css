@@ -29,8 +29,8 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: inline-block; /* Faire du bouton un élément en ligne pour qu'il apparaisse à droite */
-  margin-top: 10px; /* Ajouter une marge en haut pour l'espacement */
+  display: inline-block; 
+  margin-top: 10px;
 }
 
 .redirect-button:hover {

@@ -1,0 +1,31 @@
+
+
+<form [formGroup]="personneForm" (ngSubmit)="getPersonne()" class="your-form-class">
+  <ul>
+    <li>
+      <label for="dateDebut">Date de début</label>
+      <input type="date" id="dateDebut" formControlName="dateDebut" class="input-field" />
+    </li>
+    <li>
+      <label for="dateFin">Date de fin</label>
+      <input type="date" id="dateFin" formControlName="dateFin" class="input-field" />
+    </li>
+    <li>
+      <button type="submit" class="submit-button">Filtrer</button>
+    </li>
+  </ul>
+</form>
+
+<div *ngIf="personnes.length > 0">
+  <h2>Liste des emplois :</h2>
+  <ul>
+    <li *ngFor="let personne of personnes">
+      {{ personne.nomEntreprise }} - {{ personne.poste }} - {{ personne.dateDebut | date }} - {{ personne.dateFin | date }}
+    </li>
+  </ul>
+</div>
+
+
+<div *ngIf="personnes.length === 0">
+  <p>Aucun emploi trouvé pour les dates spécifiées.</p>
+</div>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./personne.component.css']
 })
 export class PersonneComponent {
-  title = 'angular_Test';
+
   personnes : any
   constructor(private service: PersonneService, private router: Router) { }
 
@@ -34,6 +34,12 @@ export class PersonneComponent {
     this.router.navigate(['/newEmploi', personne.id]);
 
   }
+  selectPersonneEmploi(personne: any): void {
+    this.service.selectPersonne(personne);
+    this.router.navigate(['/personne/emploi', personne.id]);
+
+  }
+
 
   redirectToNewPersonne(): void {
     this.router.navigate(['/newPersonne']);

@@ -1,19 +1,19 @@
 <form [formGroup]="emploiForm" (ngSubmit)="ajoutEmploi()" class="your-form-class">
   <ul>
     <li>
-      <label for="nomEntreprise">Nom</label>
+      <label for="nomEntreprise">Nom Entreprise</label>
       <input type="text" id="nomEntreprise" formControlName="nomEntreprise" class="input-field" />
     </li>
     <li>
-      <label for="post">Prénom</label>
-      <input type="text" id="post" formControlName="post" class="input-field" />
+      <label for="poste">Poste</label>
+      <input type="text" id="poste" formControlName="poste" class="input-field" />
     </li>
     <li>
-      <label for="dateDebut">Naissance</label>
+      <label for="dateDebut">Date de début</label>
       <input type="date" id="dateDebut" formControlName="dateDebut" class="input-field" />
     </li>
     <li>
-      <label for="dateFin">Naissance</label>
+      <label for="dateFin">Date de fin</label>
       <input type="date" id="dateFin" formControlName="dateFin" class="input-field" />
     </li>
     <li>
@@ -21,5 +21,3 @@
     </li>
   </ul>
 </form>
-
-
