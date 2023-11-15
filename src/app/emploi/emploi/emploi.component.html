@@ -1,0 +1,26 @@
+<!-- ajout-emploi.component.html -->
+<div>
+  <label for="personneSelect">Sélectionner une personne :</label>
+  <select id="personneSelect" [(ngModel)]="selectedPersonneId" name="personneSelect">
+    <option *ngFor="let personne of personnes" [value]="personne.id">{{ personne.nom }} {{ personne.prenom }}</option>
+  </select>
+</div>
+<div>
+  <label for="nomEntreprise">Nom de l'entreprise :</label>
+  <input type="text" id="nomEntreprise" [(ngModel)]="emploi.nomEntreprise" name="nomEntreprise" required>
+</div>
+<div>
+  <label for="poste">Poste :</label>
+  <input type="text" id="poste" [(ngModel)]="emploi.poste" name="poste" required>
+</div>
+<div>
+  <label for="dateDebut">Date de début :</label>
+  <input type="date" id="dateDebut" [(ngModel)]="emploi.dateDebut" name="dateDebut" required>
+</div>
+<div>
+  <label for="dateFin">Date de fin (facultatif) :</label>
+  <input type="date" id="dateFin" [(ngModel)]="emploi.dateFin" name="dateFin">
+</div>
+<div>
+  <button (click)="ajouterEmploi()">Ajouter Emploi</button>
+</div>
