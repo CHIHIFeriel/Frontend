@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Personne } from 'src/app/model/pesonne/personne.model';
@@ -26,11 +27,18 @@ export class CreatePersonneComponent {
       const personne: Personne = this.personneForm.value;
       this.service.createPersonne(personne).subscribe({
         next: (response) => {
-
           console.log(response);
+
+          // Traitez ici la réponse en cas de succès
+          this.errorMessage = ''; // Réinitialisez le message d'erreur en cas de succès
         },
         error: (error) => {
-          this.errorMessage = error;
+          // Traitez ici la réponse en cas d'erreur
+          if (error instanceof HttpErrorResponse) {
+
+              this.errorMessage = error.error.message;
+      
+          }
         }
       });
     }

@@ -1,31 +1,15 @@
-/* Styles for the table */
-.table-style {
+table {
   width: 100%;
   border-collapse: collapse;
-  font-family: Arial, sans-serif;
+  margin-top: 20px;
 }
 
-/* Styles for table header (th) */
-.table-style th {
-  background-color: gray;
-  color: white;
+th, td {
+  border: 1px solid #dddddd;
   text-align: left;
-  padding: 10px;
-}
-
-/* Styles for table data (td) */
-.table-style td {
-  border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
 }
 
-/* Alternate row background color */
-.table-style tr:nth-child(even) {
+th {
   background-color: #f2f2f2;
-}
-
-/* Hover effect for table rows */
-.table-style tr:hover {
-  background-color: #e0e0e0;
 }

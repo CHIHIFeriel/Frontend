@@ -41,3 +41,7 @@ div.error-message {
   font-size: 14px;
   margin-top: 10px;
 }
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

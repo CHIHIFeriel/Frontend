@@ -1,6 +1,8 @@
 import { Personne } from 'src/app/model/pesonne/personne.model';
 import { PersonneService } from '../../service/personne/personne.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personne',
@@ -10,7 +12,7 @@ import { Component } from '@angular/core';
 export class PersonneComponent {
   title = 'angular_Test';
   personnes : any
-  constructor(private service: PersonneService) { }
+  constructor(private service: PersonneService, private router: Router) { }
 
   ngOnInit() {
 
@@ -30,5 +32,9 @@ export class PersonneComponent {
 
   selectPersonne(personne: any): void {
     this.service.selectPersonne(personne);
+    this.router.navigate(['/newEmploi', personne.id]);
+
   }
+
+
 }
