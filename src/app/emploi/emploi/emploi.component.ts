@@ -5,6 +5,7 @@ import { EmploiService } from 'src/app/service/emploi/emploi.service';
 import { Personne } from 'src/app/model/pesonne/personne.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -41,7 +42,6 @@ export class EmploiComponent {
   }
 
 
-
   ajoutEmploi(): void {
     if (this.selectedPersonneId) {
       this.emploiService.ajouterEmploi(this.selectedPersonneId, this.emploi).subscribe({
@@ -49,7 +49,10 @@ export class EmploiComponent {
           this.router.navigate(['/vuePersonnes']);
         },
         error: (error) => {
-          this.errorMessage = error;
+          if (error instanceof HttpErrorResponse) {
+            this.errorMessage = error.error.message;
+
+        }
         }
       });
     }

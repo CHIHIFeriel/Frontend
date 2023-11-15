@@ -15,7 +15,6 @@ export class PersonneComponent {
   constructor(private service: PersonneService, private router: Router) { }
 
   ngOnInit() {
-
     this.getPersonne()
     }
 
@@ -34,6 +33,10 @@ export class PersonneComponent {
     this.service.selectPersonne(personne);
     this.router.navigate(['/newEmploi', personne.id]);
 
+  }
+
+  redirectToNewPersonne(): void {
+    this.router.navigate(['/newPersonne']);
   }
 
 

@@ -9,15 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreatePersonneComponent } from './personne/create-personne/create-personne.component';
 import { EmploiComponent } from './emploi/emploi/emploi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ErrorDialogComponentComponent } from './error-dialog-component/error-dialog-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonneComponent,
     CreatePersonneComponent,
-    EmploiComponent,
-    ErrorDialogComponentComponent
+    EmploiComponent
   ],
   imports: [
     BrowserModule,

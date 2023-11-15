@@ -6,7 +6,7 @@ import { CreatePersonneComponent } from './personne/create-personne/create-perso
 import { EmploiComponent } from './emploi/emploi/emploi.component';
 
 const routes: Routes = [
-  { path: 'vuePersonnes', component: PersonneComponent, title: 'personne'},
+  { path: '', component: PersonneComponent, title: 'personne'},
   { path: 'newPersonne', component: CreatePersonneComponent, title: 'create Personne'},
   { path: 'newEmploi/:id', component: EmploiComponent, title: 'create Emploi'},
 ];

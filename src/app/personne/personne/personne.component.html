@@ -1,24 +1,30 @@
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Âge</th>
-      <th>Emplois</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let personne of personnes" (click)="selectPersonne(personne)">
-      <td>{{ personne.nom }}</td>
-      <td>{{ personne.prenom }}</td>
-      <td>{{ personne.age }}</td>
-      <td>
-        <ul *ngIf="personne.emplois && personne.emplois.length">
-          <li *ngFor="let emploi of personne.emplois">
-            {{ emploi.post }}
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- create-personne.component.html -->
+
+<div class="table-container">
+  <table class="personne-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Âge</th>
+        <th>Emplois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personne of personnes" (click)="selectPersonne(personne)">
+        <td>{{ personne.nom }}</td>
+        <td>{{ personne.prenom }}</td>
+        <td>{{ personne.age }}</td>
+        <td>
+          <ul *ngIf="personne.emplois && personne.emplois.length">
+            <li *ngFor="let emploi of personne.emplois">
+              {{ emploi.post }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="redirectToNewPersonne()" class="redirect-button create-button">Créer un nouveau personne</button>
+</div>
