@@ -9,7 +9,7 @@ import { Personne } from '../../model/pesonne/personne.model';
 })
 export class PersonneService {
   private backendHost = 'http://localhost';
-  private backendPort = '8001';
+  private backendPort = '8000';
   constructor(private http: HttpClient, private personneEmploiService: PersonneEmploiService) { }
 
   getPersons(): Observable<Personne[]> {

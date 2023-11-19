@@ -1,9 +1,7 @@
-/* create-personne.component.css */
-
 .table-container {
   max-width: 800px;
   margin: 0 auto;
-  text-align: right; /* Aligner le contenu à droite */
+  text-align: right;
 }
 
 .personne-table {
@@ -29,10 +27,32 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: inline-block; 
+  display: inline-block;
   margin-top: 10px;
 }
 
 .redirect-button:hover {
   background-color: #45a049;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.create-button {
+  margin-left: 10px;
+}
+
+.table-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-button-container button {
+  margin-left: 10px;
+}
+.table-button-cell {
+  text-align: center;
 }

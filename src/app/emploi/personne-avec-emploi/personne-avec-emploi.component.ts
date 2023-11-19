@@ -1,27 +1,20 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmploiService } from 'src/app/service/emploi/emploi.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-emploi-personne',
-  templateUrl: './emploi-personne.component.html',
-  styleUrls: ['./emploi-personne.component.css']
+  selector: 'app-personne-avec-emploi',
+  templateUrl: './personne-avec-emploi.component.html',
+  styleUrls: ['./personne-avec-emploi.component.css']
 })
-export class EmploiPersonneComponent {
-  emploiPersonne : any;
+export class PersonneAvecEmploiComponent {
   personneForm: FormGroup;
   personnes: any[] = [];
-  selectedPersonneId: number | undefined;
 
-  constructor(private emploiService: EmploiService, private formBuilder: FormBuilder,private route: ActivatedRoute) {
+  constructor(private emploiService: EmploiService, private formBuilder: FormBuilder) {
     this.personneForm = this.formBuilder.group({
       dateDebut: ['', Validators.required],
       dateFin: ['', Validators.required],
-    });
-
-    this.route.params.subscribe(params => {
-      this.selectedPersonneId = params['id'];
     });
   }
   ngOnInit() {
@@ -30,13 +23,12 @@ export class EmploiPersonneComponent {
 
     getPersonne() {
 
-      if (this.personneForm.valid && this.selectedPersonneId) {
-
+      if (this.personneForm.valid) {
         const dateDebut = this.personneForm.get('dateDebut')?.value;
         const dateFin = this.personneForm.get('dateFin')?.value;
-        this.emploiService.getPersonneEmploi(this.selectedPersonneId, dateDebut, dateFin).subscribe({
+        this.emploiService.getPersonnesAvecEmploi(dateDebut, dateFin).subscribe({
           next: (data) => {
-            console.log(data);
+
             this.personnes = data;
           },
           error: (error) => {
@@ -45,4 +37,5 @@ export class EmploiPersonneComponent {
         });
       }
     }
-}
+
+  }

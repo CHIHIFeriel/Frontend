@@ -19,15 +19,28 @@
         <td>
           <ul *ngIf="personne.emplois && personne.emplois.length">
             <li *ngFor="let emploi of personne.emplois">
-              {{ emploi.post }}
+
+              <button (click)="selectEmploi(emploi.nomEntreprise)">{{ emploi.post }}</button>
             </li>
           </ul>
         </td>
-        <td><button (click)="selectPersonne(personne)">Ajouter Emploi</button>
-        <button (click)="selectPersonneEmploi(personne)">List des emploi</button></td>
+        <td class="table-button-cell">
+          <button (click)="selectPersonne(personne)">Ajouter Emploi</button>
+          <button (click)="selectPersonneEmploi(personne)">Liste des emplois</button>
+        </td>
       </tr>
     </tbody>
   </table>
 
-  <button (click)="redirectToNewPersonne()" class="redirect-button create-button">Créer une nouveau personne</button>
+  <div class="button-row">
+    <button class="redirect-button create-button">
+      <a [routerLink]="['/newPersonne']" title="nouveau personne">Créer une nouvelle personne</a>
+    </button>
+    <button class="redirect-button create-button">
+      <a [routerLink]="['/personneSansEmploi']" title="Les personnes sans emploi">Les personnes sans emploi</a>
+    </button>
+    <button class="redirect-button create-button">
+      <a [routerLink]="['/personneAvecEmploi']" title="Les personnes avec emploi">Les personnes avec emploi</a>
+    </button>
+  </div>
 </div>

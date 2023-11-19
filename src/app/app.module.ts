@@ -10,6 +10,9 @@ import { CreatePersonneComponent } from './personne/create-personne/create-perso
 import { EmploiComponent } from './emploi/emploi/emploi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmploiPersonneComponent } from './emploi/emploi-personne/emploi-personne.component';
+import { PersonneSansEmploiComponent } from './emploi/personne-sans-emploi/personne-sans-emploi.component';
+import { PersonneAvecEmploiComponent } from './emploi/personne-avec-emploi/personne-avec-emploi.component';
+import { PersonneParEmploiComponent } from './emploi/personne-par-emploi/personne-par-emploi.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { EmploiPersonneComponent } from './emploi/emploi-personne/emploi-personn
     PersonneComponent,
     CreatePersonneComponent,
     EmploiComponent,
-    EmploiPersonneComponent
+    EmploiPersonneComponent,
+    PersonneSansEmploiComponent,
+    PersonneAvecEmploiComponent,
+    PersonneParEmploiComponent
   ],
   imports: [
     BrowserModule,

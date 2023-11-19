@@ -40,10 +40,8 @@ export class PersonneComponent {
 
   }
 
-
-  redirectToNewPersonne(): void {
-    this.router.navigate(['/newPersonne']);
+  selectEmploi(emploi: any){
+    this.router.navigate(['/personneParEmploi', emploi]);
   }
-
 
 }
